@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav a {
+    line-height: 29px;
+    letter-spacing: 3.9px;
+    text-decoration: none solid rgb(62, 57, 48);
+    margin-right: 27px;
+    margin-left: 27px;
+    color: #776F60;
+    position: relative;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #3e3e3e;
+    transition: all 0.3s ease;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
