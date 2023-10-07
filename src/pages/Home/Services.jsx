@@ -1,9 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+import PropTypes from 'prop-types';
 import Service from "./Service";
 
-const Services = () => {
-    const services = useLoaderData();
-    console.log(services);
+const Services = ({ services }) => {
 
     return (
         <div className="w-[90%] mx-auto">
@@ -11,10 +9,14 @@ const Services = () => {
                 services.map(service => <Service
                     key={service.id}
                     service={service}
-                ></Service>) 
+                ></Service>)
             }
         </div>
     );
 };
+
+Services.propTypes = {
+    services: PropTypes.array.isRequired,
+}
 
 export default Services;

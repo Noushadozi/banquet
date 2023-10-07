@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
     const { id, image_url, name, description } = service;
@@ -10,11 +12,16 @@ const Service = ({ service }) => {
                 <p className="text-[15px] mt-[15px] mb-[24px] leading-[29px] text-[#867f72] tracking-widest">{description}</p>
                 <div className="read-more flex items-center gap-[5px] text-[#696359] text-[11px] font-semibold tracking-widest">
                     <div className="line h-[1px] w-[20px] bg-[#696359]"></div>
-                    <a href="" className="leading-8 ">READ MORE</a>
+                    <Link to={`/service/${id}`}><a className="leading-8 ">READ MORE</a></Link>
                 </div>
             </div>
         </div>
     );
 };
+
+Service.propTypes = {
+    service: PropTypes.object.isRequired,
+}
+
 
 export default Service;
