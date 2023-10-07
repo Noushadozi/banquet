@@ -2,7 +2,7 @@
 const Foooter = () => {
     return (
         <div>
-            <footer className="footer bg-[#F4F4F1] p-[100px] md:px-[150px] xl:px-[250px] lg:px-[200px]  text-base-content">
+            <footer className="footer w-100% bg-[#F4F4F1] p-[100px] md:px-[150px] xl:px-[250px] lg:px-[200px]  text-base-content">
                 <nav>
                     <a className="text-[#9E9A94]">WEDDINGS</a>
                     <a className="text-[#9E9A94]">CORPORATE</a>
@@ -16,10 +16,10 @@ const Foooter = () => {
                 </nav>
                 <nav className="flex flex-col gap-[60px]">
                     <p className="font-Cormorant text-[20px] italic text-[#3e3930]">Receive Updates & Special Announcements</p>
-                    <input type="email" placeholder="Email..." className="bg-[#F4F4F1] py-[7px] border-b-[1px] border-black w-[350px]"/>
+                    <input type="email" placeholder="Email..." className="bg-[#F4F4F1] py-[7px] border-b-[1px] border-black md:w-[350px]"/>
                 </nav>
             </footer>
-            <footer className="p-[100px] md:px-[150px] lg:px-[200px] xl:px-[250px] footer px-10 py-4 border-t bg-[#F4F4F1] text-base-content border-base-300">
+            <footer className="p-[100px] md:px-[150px] lg:px-[200px] xl:px-[250px] footer px-10 py-4 text-base-content border-base-300">
                 <aside className="items-center grid-flow-col">
                     <p className="text-[#9E9A94] text-[11px] tracking-widest">© 2023 NOUSHAD ZAMAN, ALL RIGHTS RESERVED</p>
                 </aside>

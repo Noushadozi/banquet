@@ -5,11 +5,19 @@ const Root = () => {
     return (
         <div>
             <div className="grid lg:grid-cols-10">
-                <div className="col-span-1">1</div>
-                <div className="col-span-8">
+
+                <div className="col-span-1 hidden md:block">
+                    <img src="header-logo-light.png" alt="" />
+                    <div className="sticky rotate-90 top-[50%]"><a className=" cursor-pointer text-[#9E9A94] text-[11px] font-thin tracking-[10px] whitespace-nowrap">ABOUT US</a></div>
+                </div>
+
+                <div className="col-span-8 border-x">
                     <Outlet></Outlet>
                 </div>
-                <div className="col-span-1">3</div>
+
+                <div className="col-span-1 static hidden md:block">
+                    <div className="sticky rotate-90 top-[50%]"><a className=" cursor-pointer text-[#9E9A94] text-[11px] font-thin tracking-[7px] whitespace-nowrap">CONTACT US</a></div>
+                </div>
             </div>
             <Foooter></Foooter>
         </div>
