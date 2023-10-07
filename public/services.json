@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Wedding",
+        "price": 5000,
+        "image_url": "https://i.ibb.co/rZMkY7W/shardayyy-photography-f-Jzm-Pe-a0e-U-unsplash.jpg",
+        "description": "Experience the magic of a romantic wedding ceremony, where love and commitment unite under a canopy of stars. Create lasting memories in a breathtaking setting."
+    },
+    {
+        "id": 2,
+        "name": "Birthday Party",
+        "price": 500,
+        "image_url": "https://i.ibb.co/Z1FSxb7/sirio-hm3ef-UMo-Reg-unsplash.jpg",
+        "description": "Celebrate a special birthday with friends and family, filled with laughter, delicious food, and exciting surprises. Make this day one to remember."
+    },
+    {
+        "id": 3,
+        "name": "Anniversary Party",
+        "price": 1000,
+        "image_url": "https://i.ibb.co/hHhwQ4Z/photos-by-lanty-O38-Id-cy-V4-M-unsplash.jpg",
+        "description": "Commemorate a milestone anniversary with loved ones in style. Enjoy a night of elegance, fine dining, and toasts to years of cherished memories."
+    },
+    {
+        "id": 4,
+        "name": "Graduation Ceremony",
+        "price": 2000,
+        "image_url": "https://i.ibb.co/BqQrGLk/george-zheng-UA-Tp-TR5o-AI-unsplash.jpg",
+        "description": "Honor graduates' achievements in a formal, memorable ceremony. Join us as we applaud their hard work and dedication to shaping the future."
+    },
+    {
+        "id": 5,
+        "name": "Family Reunion",
+        "price": 800,
+        "image_url": "https://i.ibb.co/nB581hH/maddi-bazzocco-Wi2owa-Qc-H8-unsplash.jpg",
+        "description": "Gather the family for a memorable reunion event filled with love, laughter, and nostalgia. Reconnect and create new cherished memories together."
+    },
+    {
+        "id": 6,
+        "name": "Cultural Festival",
+        "price": 1500,
+        "image_url": "https://i.ibb.co/swCKn8s/kimson-doan-AZMm-Uy2q-L6-A-unsplash.jpg",
+        "description": "Immerse yourself in the rich tapestry of cultures at our vibrant cultural festival. Enjoy diverse cuisine, music, and arts from around the world."
+    },
+    {
+        "id": 7,
+        "name": "Networking Event",
+        "price": 1200,
+        "image_url": "https://i.ibb.co/qpcTLqc/product-school-n-Ov-Ia-x-tfo-unsplash.jpg",
+        "description": "Connect and network with professionals in a relaxed setting. Foster valuable connections while enjoying a lively atmosphere and insightful discussions."
+    },
+    {
+        "id": 8,
+        "name": "Corporate Retreat",
+        "price": 3000,
+        "image_url": "https://i.ibb.co/316Zn41/austin-distel-rxp-Th-Owu-Vg-E-unsplash.jpg",
+        "description": "Elevate your team's productivity and morale at our refreshing corporate retreat. Combine work and relaxation in a serene and inspiring environment."
+    }
+]
