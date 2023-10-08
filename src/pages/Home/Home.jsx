@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import Navbar from "../Shared/Navbar/Navbar";
 import Banner from "./Banner";
 import Companies from "./Companies";
 import Services from "./Services";
@@ -10,7 +9,6 @@ const Home = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
             <Banner></Banner>
             <Companies></Companies>
             <Services
