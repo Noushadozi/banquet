@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
-
-
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap');
 
 body {
@@ -21,7 +19,11 @@ nav a {
     position: relative;
 }
 
-.read-more:hover .line{
+nav a.active {
+    font-weight: 800;
+}
+
+.read-more:hover .line {
     width: 50px;
     transition: all 0.3s ease;
 }
@@ -33,7 +35,7 @@ nav a::before {
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #3e3e3e;
+    background-color: #776F60;
     transition: all 0.3s ease;
 }
 

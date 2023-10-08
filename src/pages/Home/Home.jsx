@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "./Banner";
 import Companies from "./Companies";
 import Services from "./Services";
+import Request from "./Request";
 // import WhyUs from "./WhyUs";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <Services
                 services={services}
             ></Services>
+            <Request></Request>
             {/* <WhyUs></WhyUs> */}
         </div>
     );
