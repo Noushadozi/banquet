@@ -1,9 +1,14 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { toast } from 'react-toastify';
+import { BsGoogle } from 'react-icons/bs';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -11,13 +16,30 @@ const Login = () => {
         const email = form.get('email');
         const password = form.get('password');
         signIn(email, password)
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+                navigate(location.state ? location.state : '/');
+                toast.success('Login Successful', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             })
-            .then(error => {
-                console.log(error.message);
-            })
+            .then(() => { })
     }
+
+    const googleLogIn = () => {
+        googleSignIn()
+            .then(() => {
+                navigate('/');
+             })
+            .catch(() => { })
+    }
+
     return (
         <div className="hero min-h-[70vh]">
             <div className="hero-content flex-col">
@@ -36,6 +58,7 @@ const Login = () => {
                             <button className="btn bg-[white] text-[#776F60] hover:text-[white] hover:bg-[#BDB5AA] border-[#BDB5AA] rounded-none">Login</button>
                         </div>
                         <p className="text-[#BDB5AA]">New to Banquet? <Link className="text-[#776F60] underline" to="/register">Register here</Link></p>
+                        <button onClick={googleLogIn} className="btn mt-[40px] bg-[white] text-[#776F60] hover:text-[white]  hover:bg-[#BDB5AA] border-[#BDB5AA] rounded-none"><BsGoogle />Login with google</button>
                     </form>
                 </div>
             </div>

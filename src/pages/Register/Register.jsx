@@ -1,24 +1,48 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { toast } from 'react-toastify';
 
 
 const Register = () => {
+    const [error, setError] = useState('');
     const { createUser } = useContext(AuthContext);
-
+    const navigate = useNavigate();
 
     const handleRegister = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email, password);
+        if (!/(?=.*[A-Z]).(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-]).{6,}/.test(password)) {
+            toast.error('Password should have at least 6 character, a special character and a capital letter.', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            return;
+        }
         createUser(email, password)
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+                navigate('/');
+                toast.success('Account created successfully', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                });
             })
             .catch(error => {
-                console.log(error.message)
+                setError(error.message);
             })
     }
     return (
@@ -42,6 +66,7 @@ const Register = () => {
                             <button className="btn bg-[white] text-[#776F60] hover:text-[white] hover:bg-[#BDB5AA] border-[#BDB5AA] rounded-none">Register</button>
                         </div>
                         <p className="text-[#BDB5AA]">Already have an account? <Link className="text-[#776F60] underline" to="/login">Login here</Link></p>
+                        <p className="text-[#e9a291] text-right">{error}</p>
                     </form>
                 </div>
             </div>
