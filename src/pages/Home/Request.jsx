@@ -11,10 +11,10 @@ const Request = () => {
                     <form className="card-body">
                         <div className="flex gap-[40px] mb-[30px]">
                             <div className="form-control">
-                                <input name="name" type="name" placeholder="name" className="input border-[#BDB5AA] rounded-none md:w-[350px] placeholder-[#BDB5AA]" required />
+                                <input name="name" type="name" placeholder="name" className="input border-[#BDB5AA] rounded-none w-[100%] md:w-[350px] placeholder-[#BDB5AA]" required />
                             </div>
                             <div className="form-control">
-                                <input type="email" placeholder="email" className="input border-[#BDB5AA] rounded-none md:w-[350px] placeholder-[#BDB5AA]" required />
+                                <input type="email" placeholder="email" className="input border-[#BDB5AA] rounded-none w-[100%]  md:w-[350px] placeholder-[#BDB5AA]" required />
                             </div>
                         </div>
                         <div className="form-control">

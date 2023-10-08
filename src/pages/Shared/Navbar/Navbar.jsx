@@ -4,19 +4,26 @@ import { AuthContext } from "../../../provider/AuthProvider";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    console.log(user)
+    console.log(user?.email)
 
     const navLinks =
         <>
             <NavLink to="/">HOME</NavLink>
-            <NavLink to="/login">LOGIN</NavLink>
-            <NavLink to="/register">REGISTER</NavLink>
-            <NavLink to="/shop">SHOP</NavLink>
+            {
+                !user &&
+                <div>
+                    <NavLink to="/login">LOGIN</NavLink>
+                    <NavLink to="/register">REGISTER</NavLink>
+                </div>
+            }
             <NavLink to="/shop">CUSTOMERS</NavLink>
         </>
 
+
     return (
-        <nav className="navbar bg-base-100 md:h-[105px]">
-            <div className="navbar-start w-[30%]">
+        <nav className="navbar bg-base-100 md:h-[105px] justify-between">
+            <div className="navbar-start w-auto">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -36,8 +43,18 @@ const Navbar = () => {
                 </ul>
             </div>
             {
-                user && <div className="navbar-end">
-                    <button onClick={logOut} className="text-[11px] tracking-[3px] btn bg-[white] text-[#776F60] hover:text-[white] hover:bg-[#BDB5AA] border-[#BDB5AA] rounded-none w-[200px] mx-auto">Log Out</button>
+                user && <div className="navbar-end flex items-center gap-[15px] mr-[15px]">
+                    <div className="flex flex-col items-center">
+                        <img className="rounded-[50px] w-[40px] border-[#9E9A94] border-2" src={user?.photoURL} alt="" />
+                        {
+                            user?.displayName ?
+                                <p className=" cursor-pointer text-[#9E9A94] text-[11px] font-thin">{user.displayName}</p>
+                                : <p className=" cursor-pointer text-[#9E9A94] text-[11px] font-thin">{user.email}</p>
+                        }
+                    </div>
+                    <div>
+                        <button onClick={logOut} className="text-[11px] tracking-[3px] btn bg-[white] text-[#776F60] hover:text-[white] hover:bg-[#BDB5AA] border-[#BDB5AA] rounded-none w-[200px] mx-auto">Log Out</button>
+                    </div>
                 </div>
             }
         </nav>
