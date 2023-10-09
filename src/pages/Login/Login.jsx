@@ -36,7 +36,7 @@ const Login = () => {
     const googleLogIn = () => {
         googleSignIn()
             .then(() => {
-                navigate('/');
+                navigate(location.state ? location.state : '/');
              })
             .catch(() => { })
     }
