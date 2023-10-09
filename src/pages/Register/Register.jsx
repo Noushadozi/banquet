@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from 'react-toastify';
-
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const [error, setError] = useState('');
@@ -47,6 +47,9 @@ const Register = () => {
     }
     return (
         <div className="hero min-h-[70vh]">
+             <Helmet>
+                <title>Banquet | Registration</title>
+            </Helmet>
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl text-[50px] text-[#3e3930] italic font-Cormorant">Please Register!!!</h1>

@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from 'react-toastify';
 import { BsGoogle } from 'react-icons/bs';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
@@ -42,6 +43,9 @@ const Login = () => {
 
     return (
         <div className="hero min-h-[70vh]">
+            <Helmet>
+                <title>Banquet | Login</title>
+            </Helmet>
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl text-[50px] text-[#3e3930] italic font-Cormorant">Please Login!!!</h1>

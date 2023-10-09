@@ -7,7 +7,7 @@ const Services = () => {
     const [seeAll, setSeeAll] = useState(false);
 
     useEffect(() => {
-        fetch('../public/services.json')
+        fetch('services.json')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])

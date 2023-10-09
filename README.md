@@ -1,8 +1,10 @@
-# React + Vite
+# Banquet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+live link: https://banquet-cbdff.web.app/
 
-Currently, two official plugins are available:
+* Dynamically shows event data and create detailed page
+* login and registration with firebase
+* google registration 
+* Animation with aos
+* Full responsive with modern design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

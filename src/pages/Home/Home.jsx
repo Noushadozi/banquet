@@ -3,20 +3,22 @@ import Banner from "./Banner";
 import Companies from "./Companies";
 import Services from "./Services";
 import Request from "./Request";
-// import WhyUs from "./WhyUs";
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     const services = useLoaderData();
 
     return (
         <div>
+            <Helmet>
+                <title>Banquet | Home</title>
+            </Helmet>
             <Banner></Banner>
             <Companies></Companies>
             <Services
                 services={services}
             ></Services>
             <Request></Request>
-            {/* <WhyUs></WhyUs> */}
         </div>
     );
 };
