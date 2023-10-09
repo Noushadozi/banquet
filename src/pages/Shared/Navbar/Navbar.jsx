@@ -10,10 +10,11 @@ const Navbar = () => {
             <NavLink to="/">HOME</NavLink>
             {
                 !user &&
-                <div>
-                    <NavLink to="/login">LOGIN</NavLink>
-                    <NavLink to="/register">REGISTER</NavLink>
-                </div>
+                <NavLink to="/login">LOGIN</NavLink>
+            }
+            {
+                !user &&
+                <NavLink to="/register">REGISTER</NavLink>
             }
             <NavLink to="/about">ABOUT</NavLink>
         </>
