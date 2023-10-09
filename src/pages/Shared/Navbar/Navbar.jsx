@@ -4,8 +4,6 @@ import { AuthContext } from "../../../provider/AuthProvider";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    console.log(user)
-    console.log(user?.email)
 
     const navLinks =
         <>
@@ -17,7 +15,7 @@ const Navbar = () => {
                     <NavLink to="/register">REGISTER</NavLink>
                 </div>
             }
-            <NavLink to="/shop">CUSTOMERS</NavLink>
+            <NavLink to="/about">ABOUT</NavLink>
         </>
 
 
@@ -45,7 +43,9 @@ const Navbar = () => {
             {
                 user && <div className="navbar-end flex items-center gap-[15px] mr-[15px]">
                     <div className="flex flex-col items-center">
-                        <img className="rounded-[50px] w-[40px] border-[#9E9A94] border-2" src={user?.photoURL} alt="" />
+                        {
+                            user.photoURL && <img className="rounded-[50px] w-[40px] border-[#9E9A94] border-2" src={user?.photoURL} alt="" />
+                        }
                         {
                             user?.displayName ?
                                 <p className=" cursor-pointer text-[#9E9A94] text-[11px] font-thin">{user.displayName}</p>

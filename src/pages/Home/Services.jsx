@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 const Services = () => {
     const [services, setServices] = useState([]);
+    const [seeAll, setSeeAll] = useState(false);
 
     useEffect(() => {
         fetch('../public/services.json')
@@ -11,13 +12,27 @@ const Services = () => {
             .then(data => setServices(data));
     }, [])
 
+    const handleSeeAll = () => {
+        setSeeAll(!seeAll);
+    }
+
     return (
-        <div className="w-[90%] mx-auto flex flex-col">
+        <div className='flex flex-col justify-items-start mb-[150px]'>
+            <div className="w-[90%] mx-auto flex flex-col">
+                {
+                    seeAll ?
+                        services.slice(0, services.length).map(service => <Service
+                            key={service.id}
+                            service={service}
+                        ></Service>) :
+                        services.slice(0, 3).map(service => <Service
+                            key={service.id}
+                            service={service}
+                        ></Service>)
+                }
+            </div>
             {
-                services.map(service => <Service
-                    key={service.id}
-                    service={service}
-                ></Service>)
+                seeAll || <button onClick={handleSeeAll} className="text-[11px] tracking-[3px] btn bg-[white] text-[#776F60] hover:text-[white] hover:bg-[#BDB5AA] border-[#BDB5AA] rounded-none w-[200px] mx-auto">See more</button>
             }
         </div>
     );
